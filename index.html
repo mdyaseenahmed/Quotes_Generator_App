@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta
+               name="viewport"
+               content="width=device-width, initial-scale=1.0"
+          />
+          <!--Start of Tawk.to Script-->
+          <script type="text/javascript">
+               var Tawk_API = Tawk_API || {},
+                    Tawk_LoadStart = new Date();
+               (function () {
+                    var s1 = document.createElement("script"),
+                         s0 = document.getElementsByTagName("script")[0];
+                    s1.async = true;
+                    s1.src =
+                         "https://embed.tawk.to/5e7624f0eec7650c3321aa99/default";
+                    s1.charset = "UTF-8";
+                    s1.setAttribute("crossorigin", "*");
+                    s0.parentNode.insertBefore(s1, s0);
+               })();
+          </script>
+          <!--End of Tawk.to Script-->
+          <title>Quotes Generator</title>
+          <link rel="stylesheet" href="styles.css" />
+     </head>
+     <body>
+          <div class="container">
+               <div class="main-content">
+                    <div id="Quote"></div>
+                    <div id="QuoteAuthor"></div>
+                    <div><button id="newQuote">New Quote</button></div>
+               </div>
+               <p class="contact">
+                    <p>
+                         Designed & Developed By
+                    </p>
+                    <a href="https://mdyaseenahmed.github.io">Md Yaseen Ahmed</a></p>
+          </div>
+          <script type="text/javascript">
+               const quote = document.getElementById("Quote");
+               const quoteAuthor = document.getElementById("QuoteAuthor");
+               const newQuote = document.getElementById("newQuote");
+               let realData = "";
+
+               const getRandomQuote = () => {
+                    let rnum = Math.floor(Math.random() * 1630);
+                    quote.innerText = `${realData[rnum].text}`;
+                    quoteAuthor.innerText = `${
+                         realData[rnum].author
+                              ? realData[rnum].author
+                              : "UnKnown"
+                    }`;
+               };
+
+               const getnewQuote = async () => {
+                    const api = "https://type.fit/api/quotes";
+                    try {
+                         let data = await fetch(api);
+                         realData = await data.json();
+                         getRandomQuote();
+                    } catch (error) {}
+               };
+               getnewQuote();
+               newQuote.addEventListener("click", getnewQuote);
+          </script>
+     </body>
+</html>

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&family=Inika&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Serif Pro', serif;
+}
+
+body {
+    background: #0F2027; 
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    width: auto;
+    max-width: 60vw;
+    padding: 20px;
+    border-radius: 5px;
+    background: #0F2027; 
+    color: #fff;     
+    box-shadow: -5px -5px 7px rgba(225,225,225,0.1),
+    5px 5px 10px rgba(0,0,0,0.9);
+}
+
+#Quote {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.container #QuoteAuthor {
+    font-size: 0.8rem;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: right;
+    font-style: italic;
+}
+
+.container #QuoteAuthor::before {
+    content: '--';
+    display: inline-block;
+}
+
+#newQuote {
+    width: 100%;
+    border: 0px;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #2C5364;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: -1px -1px 5px rgba(225,225,225,0.1),
+    1px 1px 5px rgba(0,0,0,0.9);
+}
+
+#newQuote:active {
+	transform: scale(0.98);
+	outline: none;
+	background-color: #203A43;
+}
+
+.contact, p {
+    display: block;
+    margin-top: 2rem;
+    color: #fff !important;
+}
+
+p {
+    font-size: 1.5rem !important;
+}
+
+a{
+    color: wheat;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: 'Inika';
+    transition: ease-in .2s;
+}
+
+a:hover {
+    color: cyan;
+}
+
+@media screen and (min-width: 768px) {
+    #Quote {
+        font-size: 1.6rem;
+    }
+
+    .container #QuoteAuthor {
+        font-size: 1.2rem;
+    }
+
+    #newQuote {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    p {
+        font-size: 1.1rem !important;
+    }
+
+    a {
+        font-size: 1.2rem !important;
+    }
+}
